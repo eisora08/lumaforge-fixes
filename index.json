@@ -6,7 +6,7 @@
   "maintainer": "LumaForge Team",
   "version": "1.0.0",
   "updatedAt": "2026-07-29T00:00:00Z",
-  "fixes": [
+  "extensions": [
     {
       "id": "smokeapi",
       "name": "SmokeAPI",
