@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "onlinefix",
+  "name": "onlinefix",
+  "displayName": "Online-Fix",
+  "description": "Multiplayer and co-op fixes for Steam games",
+  "summary": "Apply online fixes to enable multiplayer",
+  "version": "1.0.0",
+  "author": "LumaForge Team",
+  "categories": ["steam", "multiplayer"],
+  "tags": ["onlinefix", "multiplayer", "coop"],
+  "managedFiles": [
+    {
+      "path": "onlinefix.dll",
+      "required": false,
+      "replaceStrategy": "always",
+      "backupStrategy": "rename",
+      "validationStrategy": "exists",
+      "isExecutable": true
+    }
+  ],
+  "metadata": {
+    "type": "tool",
+    "surfaces": ["tools"],
+    "toolConfig": {
+      "target": "game-folder",
+      "usesIndex": true,
+      "indexUrl": "https://api.perondepot.xyz/all/",
+      "backup": true,
+      "backupSuffix": ".bak"
+    }
+  },
+  "permissions": [
+    { "id": "filesystem.write", "reason": "Copy files to game folder" },
+    { "id": "filesystem.delete", "reason": "Remove files on revert" },
+    { "id": "network.http", "reason": "Download fixes from index" }
+  ],
+  "releaseProvider": {
+    "provider": "http",
+    "config": {
+      "baseUrl": "https://api.perondepot.xyz/all/"
+    }
+  }
+}

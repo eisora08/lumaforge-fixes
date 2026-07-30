@@ -1,0 +1,56 @@
+{
+  "schemaVersion": 1,
+  "id": "lumaforge-fixes",
+  "name": "LumaForge Third-Party Fixes",
+  "description": "Third-party game fixes and tools managed by LumaForge Lite",
+  "maintainer": "LumaForge Team",
+  "version": "1.0.0",
+  "updatedAt": "2026-07-29T00:00:00Z",
+  "fixes": [
+    {
+      "id": "smokeapi",
+      "name": "SmokeAPI",
+      "description": "Steam API proxy for offline Steam games",
+      "version": "4.1.3",
+      "githubOwner": "acidicoala",
+      "githubRepo": "SmokeAPI",
+      "manifestUrl": "fixes/smokeapi/manifest.json"
+    },
+    {
+      "id": "steamless",
+      "name": "Steamless",
+      "description": "SteamStub DRM unpacker for game executables",
+      "version": "3.0.0",
+      "githubOwner": "atom0s",
+      "githubRepo": "Steamless",
+      "manifestUrl": "fixes/steamless/manifest.json"
+    },
+    {
+      "id": "onlinefix",
+      "name": "Online-Fix",
+      "description": "Multiplayer and co-op fixes for Steam games",
+      "version": "1.0.0",
+      "githubOwner": null,
+      "githubRepo": null,
+      "manifestUrl": "fixes/onlinefix/manifest.json"
+    },
+    {
+      "id": "goldberg",
+      "name": "GSE Fork",
+      "description": "Steam emulator for offline play",
+      "version": "0.4.0",
+      "githubOwner": "alex47exe",
+      "githubRepo": "gse_fork",
+      "manifestUrl": "fixes/goldberg/manifest.json"
+    },
+    {
+      "id": "opensteamtool",
+      "name": "OpenSteamTool",
+      "description": "DLL-based Steam integration tool",
+      "version": "1.4.8",
+      "githubOwner": "OpenSteam001",
+      "githubRepo": "OpenSteamTool",
+      "manifestUrl": "fixes/opensteamtool/manifest.json"
+    }
+  ]
+}

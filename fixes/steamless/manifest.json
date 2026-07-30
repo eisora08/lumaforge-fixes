@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "id": "steamless",
+  "name": "steamless",
+  "displayName": "Steamless",
+  "description": "SteamStub DRM removal tool",
+  "summary": "Remove SteamStub from game executables",
+  "version": "3.0.0",
+  "author": "Atom0s",
+  "repository": "https://github.com/atom0s/Steamless",
+  "license": "MIT",
+  "categories": ["steam", "drm"],
+  "tags": ["steamless", "drm", "unpacker"],
+  "managedFiles": [
+    {
+      "path": "Steamless.CLI.exe",
+      "required": false,
+      "replaceStrategy": "always",
+      "backupStrategy": "rename",
+      "validationStrategy": "exists",
+      "isExecutable": true
+    }
+  ],
+  "metadata": {
+    "type": "tool",
+    "surfaces": ["tools"],
+    "toolConfig": {
+      "target": "game-folder",
+      "files": [
+        { "source": "Steamless.CLI.exe", "target": "Steamless.CLI.exe" }
+      ],
+      "executable": "Steamless.CLI.exe",
+      "args": ["{gameExe}"],
+      "backup": true,
+      "backupSuffix": ".bak"
+    }
+  },
+  "permissions": [
+    { "id": "filesystem.write", "reason": "Copy Steamless to game folder" },
+    { "id": "filesystem.delete", "reason": "Remove files on revert" }
+  ],
+  "releaseProvider": {
+    "provider": "github",
+    "config": {
+      "owner": "atom0s",
+      "repo": "Steamless",
+      "assetPattern": "*.zip",
+      "tagPattern": "v*"
+    }
+  }
+}

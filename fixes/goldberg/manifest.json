@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 1,
+  "id": "gse_fork",
+  "name": "gse_fork",
+  "displayName": "GSE Fork",
+  "description": "Steam client emulator for offline play",
+  "summary": "Steam emulator for running games without Steam client",
+  "version": "0.4.0",
+  "author": "alex47exe",
+  "repository": "https://github.com/alex47exe/gse_fork",
+  "license": "GNU General Public License v3.0",
+  "categories": ["steam", "emulation"],
+  "tags": ["gse_fork", "emulator", "offline"],
+  "managedFiles": [
+    {
+      "path": "steamclient.dll",
+      "required": false,
+      "replaceStrategy": "always",
+      "backupStrategy": "rename",
+      "validationStrategy": "exists",
+      "isExecutable": true
+    },
+    {
+      "path": "steamclient64.dll",
+      "required": false,
+      "replaceStrategy": "always",
+      "backupStrategy": "rename",
+      "validationStrategy": "exists",
+      "isExecutable": true
+    }
+  ],
+  "metadata": {
+    "type": "tool",
+    "surfaces": ["tools"],
+    "toolConfig": {
+      "target": "game-folder",
+      "files": [
+        { "source": "steamclient.dll", "target": "steamclient.dll" },
+        { "source": "steamclient64.dll", "target": "steamclient64.dll" }
+      ],
+      "backup": true,
+      "backupSuffix": ".bak"
+    }
+  },
+  "permissions": [
+    { "id": "filesystem.write", "reason": "Copy files to game folder" },
+    { "id": "filesystem.delete", "reason": "Remove files on revert" }
+  ],
+  "releaseProvider": {
+    "provider": "github",
+    "config": {
+      "owner": "alex47exe",
+      "repo": "gse_fork",
+      "assetPattern": "*.zip",
+      "tagPattern": "*"
+    }
+  }
+}
