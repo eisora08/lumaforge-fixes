@@ -188,16 +188,24 @@ local function fetch_latest_release()
     error("No assets found in the latest GitHub release")
   end
 
-  -- Find the first zip asset
+  -- Prefer Release zip over Debug
   local download_url = nil
   for _, asset in ipairs(assets) do
-    if asset.name and asset.name:match("%.zip$") then
+    if asset.name and asset.name:match("%-Release%.zip$") then
       download_url = asset.browser_download_url
-      if download_url then break end
+      break
     end
   end
-
-  if download_url == nil then
+  -- Fallback to any zip
+  if not download_url then
+    for _, asset in ipairs(assets) do
+      if asset.name and asset.name:match("%.zip$") then
+        download_url = asset.browser_download_url
+        if download_url then break end
+      end
+    end
+  end
+  if not download_url then
     error("No zip asset found in the latest GitHub release")
   end
 
